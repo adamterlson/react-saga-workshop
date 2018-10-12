@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Adam Terlson <adam.terlson@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "redux-saga": "^0.16.0",
+    "redux-saga-test-plan": "^3.7.0",
+    "regenerator-runtime": "^0.12.1",
+    "url-parse": "^1.4.3"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "jest"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
+    "test": "jest",
+    "postinstall": "cd node_modules/react-native/scripts && ./ios-install-third-party.sh && cd ../../../ && cd node_modules/react-native/third-party/glog-0.3.5/ && ../../scripts/ios-configure-glog.sh && cd ../../../../"
+  },
+  "dependencies": {
+    "react": "16.5.0",
+    "react-native": "0.57.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "23.6.0",
+    "babel-preset-react-native": "^5.0.2",
+    "babel-runtime": "^6.26.0",
+    "jest": "23.6.0",
+    "metro": "0.48.0",
+    "metro-react-native-babel-preset": "^0.48.0",
+    "package": "^1.0.1",
+    "prop-types": "^15.6.2",
+    "react-dom": "16.5.0",
+    "react-test-renderer": "16.5.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
