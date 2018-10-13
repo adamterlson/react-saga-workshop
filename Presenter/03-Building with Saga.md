@@ -92,6 +92,18 @@ while (true) {
 
 Handle your error as close to the side effect source as possible.  Everything else must propagate
 
+```javascript
+while (true) {
+    yield take('API_REQUEST')
+    try {
+        yield call(somethingDangerous)
+    } catch (ex) {
+        // Do something
+    }
+}
+```
+
+
 Consider using transactions
 
 ```javascript

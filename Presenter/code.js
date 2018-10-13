@@ -74,6 +74,9 @@ while (true) {
 
 
 
+
+
+
 const chan = yield actionChannel('REQUEST')
 while (true) {
     const action = yield take('API_REQUEST')
@@ -82,8 +85,65 @@ while (true) {
 
 
 
+while (true) {
+    yield take('API_REQUEST')
+    try {
+        yield call(somethingDangerous)
+    } catch (ex) {
+        // Do something
+    }
+}
+
+
 
 while (true) {
     yield take('API_REQUEST')
     const { error, payload } = yield call(somethingDangerous)
 }
+
+
+while (true) {
+    try {
+        yield all([
+            call(one),
+            call(two),
+        ])
+    } catch (ex) {
+        console.error(ex)
+    }
+}
+
+/**
+04-Saga testing
+**/
+
+test('getProducts Saga test', function(t) {
+    const generator = getAllProducts()
+
+    let next = generator.next({ type: 'GET_ALL_PRODUCTS' })
+    t.deepEqual(next.value, call(api.getProducts), 'must yield api.getProducts')
+
+    next = generator.next(products)
+    t.deepEqual(next.value, put(actions.receiveProducts(products)), 'must yield actions.receiveProducts(products)')
+
+    t.end()
+})
+
+
+
+testSaga(performMath, 40, 2)
+    .next()
+    .take('HELLO')
+    .next(action)
+    .put({ type: 'ADD', payload: 42 })
+    .next()
+    .isDone()
+
+
+
+
+
+expectSaga(performMath, 40, 2)
+    .dispatch(action)
+    .put({ type: 'ADD', payload: 42 })
+    .run();

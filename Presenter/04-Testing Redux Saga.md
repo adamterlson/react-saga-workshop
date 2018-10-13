@@ -8,7 +8,7 @@
 test('getProducts Saga test', function(t) {
     const generator = getAllProducts()
 
-    let next = generator.next({ type: 'GET_ALL_PRODUCTS' })actions.getAllProducts())
+    let next = generator.next({ type: 'GET_ALL_PRODUCTS' })
     t.deepEqual(next.value, call(api.getProducts), 'must yield api.getProducts')
 
     next = generator.next(products)
@@ -27,7 +27,7 @@ testSaga(performMath, 40, 2)
     .next(action)
     .put({ type: 'ADD', payload: 42 })
     .next()
-    .isDone();
+    .isDone()
 ```
 
 ## Exercise 01-Unit Testing
