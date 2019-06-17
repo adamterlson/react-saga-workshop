@@ -1,5 +1,5 @@
 # UI & Saga Workshop
-If you'd like to receive this workshop training, please contact me: [Twitter](https://twitter.com/adamterlson) or [email](mailto:adam.terlson@gmail.com).
+If you'd like to receive this workshop training, please contact me: [Twitter](https://twitter.com/adamterlson) or [email](adam.terlson@gmail.com).
 
 ## Schedule (10:00–15:00)
 
